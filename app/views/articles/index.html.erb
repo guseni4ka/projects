@@ -1,0 +1,21 @@
+<h1 style="margin-left:20px;">All articles:</h1>
+<% @articles.each do |article| %>
+  <div style="width: 500px;margin: 20px;">
+    <div>
+      <div style="display:inline-block;color:grey;font-size: 20px;width: 50%;vertical-align:top">
+        <%= article.title %>
+        <%= link_to "Edit", edit_article_path(article) %>
+        <%= link_to "Delete", article_path(article), method: :delete %>
+      </div>
+      <div style="display:inline-block;width:35%;font-size:10px;vertical-align:top">
+        <%= article.published_at.strftime("%d-%m-%Y") %>
+      </div>
+    </div>
+    <div style="margin-top:5px;">
+      <%= article.text %>
+    </div>
+  </div>
+<% end %>
+
+<%= link_to "Add articles", new_article_path %><br>
+<%= link_to "Add categories", new_category_path %>

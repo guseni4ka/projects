@@ -1,0 +1,21 @@
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @article.text %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @article.published_at.strftime("%d-%m-%Y") %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @article.categories.map(&:title).join(', ') %>
+</p>
+
+<%= link_to "Return", articles_path %>

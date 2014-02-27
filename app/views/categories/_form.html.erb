@@ -1,0 +1,16 @@
+<%= form_for @category do |f| %>
+  <% if @category.errors.any? %>
+      <% @category.errors.full_messages.each do |msg| %>
+        <p>
+          <%= msg %>
+        </p>
+      <% end %>
+  <% end %>
+  <%= f.label :title, class: "test-class" %><br>
+  <%= f.text_field :title %><br><br>
+  <%= f.label :slug, class: "test-class" %><br>
+  <%= f.text_field :slug %>
+  <div style="margin-top: 15px;">
+    <%= f.submit value: "Add" %>
+  </div>
+<% end %>
