@@ -1,4 +1,4 @@
-<h1 style="margin-left:20px;">All articles:</h1>
+<!-- <h1 style="margin-left:20px;">All articles:</h1>
 <% @articles.each do |article| %>
 <% if article.published_at.present? %>
   <div style="width: 500px;margin: 20px;">
@@ -21,4 +21,23 @@
 <%= will_paginate @articles %>
 
 <%= link_to "Add articles", new_article_path %><br>
-<%= link_to "Add categories", new_category_path %>
+<%= link_to "Add categories", new_category_path %>  -->
+
+<div class="wrapper">
+  <div class="content">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <ul class="nav">
+          <li class="active"><%= link_to "Home", controller: "articles" %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Articles</a></li>
+              <li><a href="#">Categories</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
