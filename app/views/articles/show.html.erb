@@ -8,10 +8,12 @@
   <%= @article.text %>
 </p>
 
+<% if @article.published_at.present? %>
 <p>
   <strong>Date:</strong>
   <%= @article.published_at.strftime("%d-%m-%Y") %>
 </p>
+<% end %>
 
 <p>
   <strong>Category:</strong>

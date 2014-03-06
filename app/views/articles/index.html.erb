@@ -1,9 +1,10 @@
 <h1 style="margin-left:20px;">All articles:</h1>
 <% @articles.each do |article| %>
+<% if article.published_at.present? %>
   <div style="width: 500px;margin: 20px;">
     <div>
       <div style="display:inline-block;color:grey;font-size: 20px;width: 50%;vertical-align:top">
-        <%= article.title %>
+        <%= link_to article.title, article_path(article) %>
         <%= link_to "Edit", edit_article_path(article) %>
         <%= link_to "Delete", article_path(article), method: :delete %>
       </div>
@@ -14,8 +15,10 @@
     <div style="margin-top:5px;">
       <%= article.text %>
     </div>
-  </div>
+ </div>
+ <% end %>
 <% end %>
+<%= will_paginate @articles %>
 
 <%= link_to "Add articles", new_article_path %><br>
 <%= link_to "Add categories", new_category_path %>

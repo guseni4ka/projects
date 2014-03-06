@@ -26,4 +26,5 @@ gem 'turbolinks'
 
 
 gem 'devise'
-gem 'bootstrap-sass'
+gem 'twitter-bootstrap-rails'
+gem 'will_paginate'
