@@ -1,43 +1,26 @@
-<!-- <h1 style="margin-left:20px;">All articles:</h1>
+<h1>All articles:</h1>
 <% @articles.each do |article| %>
-<% if article.published_at.present? %>
-  <div style="width: 500px;margin: 20px;">
-    <div>
-      <div style="display:inline-block;color:grey;font-size: 20px;width: 50%;vertical-align:top">
-        <%= link_to article.title, article_path(article) %>
-        <%= link_to "Edit", edit_article_path(article) %>
-        <%= link_to "Delete", article_path(article), method: :delete %>
+  <% if article.published_at.present? %>
+    <div class="row">
+      <div class="span4">
+        <div>
+          <%= link_to article.title, article_path(article), class: "title" %>
+          <%= link_to "Edit", edit_article_path(article) %>
+          <%= link_to "Delete", article_path(article), method: :delete %> 
+        </div>
+        <div>
+          <%= article.text.truncate(60) %>
+        </div>
       </div>
-      <div style="display:inline-block;width:35%;font-size:10px;vertical-align:top">
-        <%= article.published_at.strftime("%d-%m-%Y") %>
+      <div class="span2">
+        <div style="display:inline-block;width:35%;font-size:10px;vertical-align:top">
+          <%= article.published_at.strftime("%d-%m-%Y") %>
+        </div>
       </div>
-    </div>
-    <div style="margin-top:5px;">
-      <%= article.text %>
-    </div>
- </div>
- <% end %>
+   </div>
+  <% end %>
 <% end %>
 <%= will_paginate @articles %>
-
+<!--
 <%= link_to "Add articles", new_article_path %><br>
-<%= link_to "Add categories", new_category_path %>  -->
-
-<!-- <div class="wrapper">
-  <div class="content">
-    <div class="navbar">
-      <div class="navbar-inner">
-        <ul class="nav">
-          <li class="active"><%= link_to "Home", controller: "articles" %></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Articles</a></li>
-              <li><a href="#">Categories</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div> -->
+<%= link_to "Add categories", new_category_path %> -->

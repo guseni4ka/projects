@@ -5,3 +5,8 @@
   To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
   =require twitter-bootstrap-static/fontawesome
   */
+
+  h1 { font-size: 30px; color: #000; }
+  .container { width: 984px; padding: 0 20px; }
+  .row, .span4, .span2 {margin-left: 0; }
+  .row { margin-bottom: 15px; }
