@@ -8,5 +8,5 @@
 
   h1 { font-size: 30px; color: #000; }
   .container { width: 984px; padding: 0 20px; }
-  .row, .span4, .span2 {margin-left: 0; }
+  .row, .span4, .span2. .span6 { margin-left: 0!important; }
   .row { margin-bottom: 15px; }

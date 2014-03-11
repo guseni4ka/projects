@@ -30,6 +30,9 @@ GEM
     bcrypt-ruby (3.1.2)
     bcrypt-ruby (3.1.2-x64-mingw32)
     builder (3.1.4)
+    cells (3.9.1)
+      actionpack (>= 3.0)
+      railties (>= 3.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -118,6 +121,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  cells
   coffee-rails (~> 4.0.0)
   devise
   jquery-rails

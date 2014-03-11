@@ -1,0 +1,11 @@
+<h1>All categories:</h1>
+<% @categories.each do |category| %>
+  <div class="row">
+    <div class="span4">
+      <div>
+        <%= link_to category.title, admin_category_path(category), class: "title" %>
+      </div>
+    </div>
+ </div>
+<% end %>
+<%= will_paginate @categories %>

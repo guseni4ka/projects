@@ -5,6 +5,8 @@
       <div class="span4">
         <div>
           <%= link_to article.title, article_path(article), class: "title" %>
+          <%= link_to "Edit", edit_admin_article_path(article) %>
+          <%= link_to "Delete", admin_article_path(article), method: :delete %> 
         </div>
         <div>
           <%= article.text.truncate(60) %>
@@ -19,7 +21,6 @@
   <% end %>
 <% end %>
 <%= will_paginate @articles %>
-
-<% content_for :sidebar do %>
-  <%= render_cell(:categories, :sidebar) %>
-<% end %>
+<!--
+<%= link_to "Add articles", new_admin_article_path %><br>
+<%= link_to "Add categories", new_admin_category_path %> -->

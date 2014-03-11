@@ -2,7 +2,6 @@ class Article < ActiveRecord::Base
   has_and_belongs_to_many :categories
   validates :title, presence: true, length: { minimum: 5 }
   validates :category_ids, presence: true
-  #validates :published_at, allow_blank: true
   validate :valid_date?
 
   before_validation :cleanup_categories

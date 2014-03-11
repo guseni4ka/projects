@@ -1,0 +1,7 @@
+<ul class="nav nav-pills nav-stacked">
+  <% @categories.each do |category| %>
+    <li>
+      <%= link_to category.title, :controller => "articles", :action => "index", :slug => "fil" %>
+    </li>
+  <% end %>
+</ul>

@@ -15,7 +15,14 @@ FirstApp::Application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-    resources :articles, :categories
+    #resources :articles, :categories
+
+    namespace :admin do
+      resources :articles, :categories
+    end
+
+    get 'articles/:id' => 'articles#show', as: 'article'
+    get 'articles(/:slug)' => 'articles#index', as: 'articles'
 
   # Example resource route with options:
   #   resources :products do
