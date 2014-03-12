@@ -26,6 +26,7 @@ gem 'turbolinks'
 
 
 gem 'devise'
+gem 'cancan'
 gem 'twitter-bootstrap-rails'
 gem 'will_paginate'
 gem 'cells'

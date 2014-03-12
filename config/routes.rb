@@ -5,6 +5,7 @@ FirstApp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'articles#index'
+
   #get '/:var' => 'welcome#index'
   #post '/action' => 'welcome#form_action'
 
@@ -21,8 +22,8 @@ FirstApp::Application.routes.draw do
       resources :articles, :categories
     end
 
-    get 'articles/:id' => 'articles#show', as: 'article'
-    get 'articles(/:slug)' => 'articles#index', as: 'articles'
+    get 'articles/:id' => 'articles#show', as: 'article', constraints: { id: /\d+/ }
+    get 'articles(/:slug)'    => 'articles#index', as: 'articles'
 
   # Example resource route with options:
   #   resources :products do

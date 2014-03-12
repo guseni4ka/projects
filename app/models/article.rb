@@ -10,6 +10,9 @@ class Article < ActiveRecord::Base
     def active
       where('published_at <= ?', Time.zone.now)
     end
+    def list(slug)
+      joins(:categories).where("#{Category.table_name}.slug = ?", slug)
+    end
   end
 
   def active?

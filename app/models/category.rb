@@ -6,4 +6,8 @@ class Category < ActiveRecord::Base
   def self.categories_options
     self.all.map { |category| [category.title, category.id] }
   end
+
+  def to_param
+    self.slug
+  end
 end
